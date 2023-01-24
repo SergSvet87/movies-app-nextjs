@@ -4,11 +4,11 @@ import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 
-import Movies from "../../movies";
-import Sidebar from "../../../components/Sidebar";
-import Slider from "../../../components/Slider";
+import Movies from "../movies";
+import Sidebar from "../../components/Sidebar";
+import Slider from "../../components/Slider";
 
-import styles from '../../../styles/Home.module.scss';
+import styles from '../../styles/Home.module.scss';
 
 // export const getStaticProps = async () => {
 //   const response = await fetch('https://yts.mx/api/v2/list_movies.json?limit=23&sort_by=year');
@@ -26,9 +26,9 @@ import styles from '../../../styles/Home.module.scss';
 // }
 
 export const getServerSideProps = async (context) => {
-  const { genre } = context.params;
+  const { page } = context.params;
 
-  const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&genre=${genre}`);
+  const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=${page}`);
   const data = await response.json();
 
   if (!data) {
@@ -44,7 +44,7 @@ export const getServerSideProps = async (context) => {
 
 const PAGE = 1;
 
-const Genre = ({ data }) => {
+const Page = ({ data }) => {
   const [page, setPage] = useState(PAGE);
 
   const movieLimit = data === undefined ? '' : data.limit;
@@ -85,4 +85,4 @@ const Genre = ({ data }) => {
   )
 }
 
-export default Genre
+export default Page

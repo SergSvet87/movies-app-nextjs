@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 
-import Movies from "./Movies";
+import Movies from "./movies/index";
 import Sidebar from "../components/Sidebar";
 import Slider from "../components/Slider";
 
@@ -57,7 +57,7 @@ const Home = ({ data }) => {
               <PaginationItem
                 color="primary"
                 component={Link}
-                href={`/movies/${item.page}`}
+                href={`/pages/${item.page}`}
                 {...item}
               />
             )}

@@ -8,6 +8,7 @@ const Search = () => {
 
   function onSubmitHandler(e) {
     e.preventDefault();
+    
     setTextSearch(e.target.value);
     e.target.value = '';
   }
@@ -25,7 +26,7 @@ const Search = () => {
           onChange={(e) => setTextSearch(e.target.value)}
           onBlur={(e) => onSubmitHandler(e)}
         />
-        <Link href={`/movies/${textSearch}`}>
+        <Link href={`/query_term/${textSearch}`}>
           <button type="button">Search</button>
         </Link>
       </form>

@@ -41,7 +41,7 @@ const MovieDetails = ({ movie }) => {
                   <Image
                     src='/film-info/btn-play.png'
                     alt="Play"
-                    width={150}
+                    width={200}
                     height={150}
                     title={`Download ${movie.title_long}`}
                   />

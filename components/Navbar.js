@@ -11,7 +11,7 @@ const Navbar = ({ items }) => {
       <ul className={styles.list}>
         {items.map(item => (
           <li className={styles.item} key={item.id}>
-            <Link className={pathname === item.path ? styles.active : null} href={item.path}>
+            <Link className={pathname === item.path ? styles.active : null} href={`${item.path}`}>
               {item.title}
             </Link>
           </li>

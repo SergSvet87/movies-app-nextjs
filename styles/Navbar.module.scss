@@ -14,14 +14,14 @@
     color        : $gray;
     border-bottom: 3px solid transparent;
     @include flex(center, center);
-    transition: 0.3s;
+    transition: color .8s;
 
     a {
       padding: 15px 0;
 
-    &:first-letter {
-      text-transform: uppercase;
-    }
+      &:first-letter {
+        text-transform: uppercase;
+      }
 
     }
 
@@ -32,6 +32,7 @@
 
   .active {
     color        : $primary-color;
+    transform    : scale(1.08);
     border-bottom: 3px solid $bg-header;
   }
 }
