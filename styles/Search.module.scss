@@ -1,0 +1,57 @@
+@import './mixins';
+@import './variables';
+
+.search {
+	width           : 30%;
+	display         : flex;
+	align-items     : center;
+	border-radius   : 30px;
+	background-color: $bg-color;
+	border          : 1px solid rgba($gray, 0.4);
+	padding         : 1rem 1.5rem;
+
+	form {
+		display    : inline-flex;
+		align-items: center;
+		flex       : 1 1 auto;
+		position   : relative;
+
+		input {
+			width           : 75%;
+			background-color: transparent;
+			outline         : none;
+			color           : #fff;
+			padding         : 3px 15px;
+			margin          : 0 1.5rem;
+			border          : none;
+			border-radius   : 10px;
+
+			&::placeholder {
+				color: $gray;
+			}
+		}
+
+		button {
+			position        : absolute;
+			top             : calc(50% - 20px);
+			left            : calc(100% + 45px);
+			background-color: $bg-color;
+			padding         : 10px;
+			border-radius   : 10px;
+			cursor          : pointer;
+			color           : $primary-color;
+			text-transform  : uppercase;
+
+			&:hover {
+				box-shadow: 0px 0px 8px 5px rgba($primary-color, .3);
+			}
+		}
+
+	}
+
+
+	i {
+		color    : $gray;
+		font-size: 20px;
+	}
+}

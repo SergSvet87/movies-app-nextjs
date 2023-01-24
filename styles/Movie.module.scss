@@ -1,0 +1,68 @@
+@import './mixins';
+@import './variables';
+
+.poster {
+  position     : relative;
+  margin-bottom: 15px;
+
+  img {
+    width        : 100%;
+    height       : 380px;
+    object-fit   : cover;
+    border-radius: 18px;
+  }
+
+  .rating {
+    width           : 70px;
+    position        : absolute;
+    top             : 30px;
+    left            : 20px;
+    padding         : 3px;
+    background-color: $tabs-color;
+    color           : $white-color;
+    font-size       : 16px;
+    border-radius   : 15px;
+  }
+
+  .year {
+    width           : 80px;
+    position        : absolute;
+    bottom          : 20px;
+    right           : 20px;
+    padding         : 3px;
+    background-color: $tabs-color;
+    color           : $primary-color;
+    font-size       : 18px;
+    border-radius   : 15px;
+  }
+}
+
+.text {
+  min-height    : 150px;
+  display       : flex;
+  flex-direction: column;
+
+  .title {
+    font-family  : $ff-kurale;
+    font-size    : 28px;
+    margin-bottom: 15px;
+    flex         : 1 1 auto;
+  }
+
+  .genres {
+    @include flex(center, center);
+    flex-wrap: wrap;
+
+    .genre {
+      font-weight: bold;
+      font-size  : 14px;
+      color      : $primary-color;
+      margin     : 0 10px 10px;
+    }
+  }
+
+  .summary {
+    font-size : 14px;
+    text-align: left;
+  }
+}

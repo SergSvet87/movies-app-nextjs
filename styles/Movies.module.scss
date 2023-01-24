@@ -1,0 +1,33 @@
+@import './mixins';
+@import './variables';
+
+.movies {
+  max-width     : 72%;
+  display       : flex;
+  flex-direction: column;
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  h4 {
+
+    &:hover {
+      text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 15px -15px 2px rgba(238, 155, 54, 0.1), 15px -15px 2px rgba(238, 155, 54, 0.1), 10px -10px 5px rgba(238, 155, 54, 0.1), 10px -10px 5px rgba(238, 155, 54, 0.1), 4px -4px 6px rgba(238, 155, 54, 0.2), 4px -4px 6px rgba(238, 155, 54, 0.2), 4px -4px 6px rgba(238, 155, 54, 0.2);
+    }
+  }
+
+  .list {
+    @include flex(space-between, flex-start);
+    gap      : 20px;
+    flex-wrap: wrap;
+
+    .movie {
+      max-width : 270px;
+      min-height: 600px;
+      padding   : 15px;
+      text-align: center;
+      box-shadow: rgba(238, 155, 54, 0.4) -5px -5px, rgba(238, 155, 54, 0.3) -10px -10px, rgba(238, 155, 54, 0.2) -15px -15px, rgba(238, 155, 54, 0.1) -20px -20px, rgba(238, 155, 54, 0.05) -25px -25px;
+    }
+  }
+}

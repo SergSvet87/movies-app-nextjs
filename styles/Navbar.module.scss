@@ -1,0 +1,37 @@
+@import './mixins';
+@import './variables';
+
+.nav {
+
+  .list {
+    position: relative;
+    @include flex(space-between, center);
+  }
+
+  .item {
+    min-width    : 150px;
+    font-size    : 18px;
+    color        : $gray;
+    border-bottom: 3px solid transparent;
+    @include flex(center, center);
+    transition: 0.3s;
+
+    a {
+      padding: 15px 0;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .active {
+    color        : $primary-color;
+    border-bottom: 3px solid $bg-header;
+  }
+}
