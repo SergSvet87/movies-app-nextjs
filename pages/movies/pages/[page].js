@@ -4,11 +4,11 @@ import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 
-import Movies from "../movies";
-import Sidebar from "../../components/Sidebar";
-import Slider from "../../components/Slider";
+import Movies from "../index";
+import Sidebar from "../../../components/Sidebar";
+import Slider from "../../../components/Slider";
 
-import styles from '../../styles/Home.module.scss';
+import styles from '../../../styles/Home.module.scss';
 
 // export const getStaticProps = async () => {
 //   const response = await fetch('https://yts.mx/api/v2/list_movies.json?limit=23&sort_by=year');

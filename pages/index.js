@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 
-import Movies from "./movies/index";
+import Movies from "./movies";
 import Sidebar from "../components/Sidebar";
 import Slider from "../components/Slider";
 

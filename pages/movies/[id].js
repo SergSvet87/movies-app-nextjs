@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 import MovieDetails from '../../components/MovieDetails';
 
 export const getServerSideProps = async (context) => {
