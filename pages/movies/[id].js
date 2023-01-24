@@ -13,7 +13,7 @@ console.log(context.params);
   }
 
   return {
-    props: { movie: data.data.movie },
+    props: { movie: data.data.movie ?? null },
   }
 };
 
