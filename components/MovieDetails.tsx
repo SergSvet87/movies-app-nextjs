@@ -6,7 +6,7 @@ import styles from '../styles/MovieDetails.module.scss';
 
 const MovieDetails = ({ movie }) => {
   if (!movie) {
-    return <Heading tag="h3" text="Empty movie" />
+    return <Heading tag="h3" className='text-aligh' text="Empty movie" />
   }
 
   const screenshots = [
