@@ -30,7 +30,6 @@ const PAGE = 1;
 
 const Genre = ({ data }) => {
   const [page, setPage] = useState(PAGE);
-  console.log(data);
 
   const movieLimit = data.limit;
   const movieCount = data.movie_count;
@@ -40,7 +39,7 @@ const Genre = ({ data }) => {
   return (
     <div className="container">
       <div className={styles.moviesWrapper}>
-        <Movies films={data.movies} />
+        <Movies filmItems={data.movies} />
         <Sidebar movieId={movieId} />
       </div>
       <Stack spacing={2}>

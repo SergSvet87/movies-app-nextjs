@@ -23,7 +23,7 @@ const MovieDetails = ({ movie }) => {
           background: `url(${movie.background_image_original}) 100% 100% / cover no-repeat`,
         }}>
         <div className={styles.view}>
-          <Heading className={styles.titleLong} text={movie.title_long} />
+          <Heading className={styles.titleLong} tag='h1' text={movie.title_long} />
           <Heading className={styles.titleEng} tag='h2' text={movie.title_english} />
           <div className={styles.description}>
             <div className={styles.image}>
@@ -51,15 +51,15 @@ const MovieDetails = ({ movie }) => {
             <div className={styles.definition}>
               <div className={styles.rating}>
 
-                <Heading tag='h3' text='Rating:' />
+                <Heading tag='h3' text='Rating:' className='h3' />
                 <span>{movie.rating}</span> / 10
               </div>
               <div className={styles.year}>
-                <Heading tag='h3' text='Year:' />
+                <Heading tag='h3' text='Year:' className='h3' />
                 <span>{movie.year}</span>
               </div>
               <div className={styles.genres}>
-                <Heading tag='h3' text='Genre:' />
+                <Heading tag='h3' text='Genre:' className='h3' />
                 <ul>
                   {movie.genres.map((genre, index) => (
                     <li className={styles.genre} key={index}>
@@ -71,7 +71,7 @@ const MovieDetails = ({ movie }) => {
 
               {movie.cast ? (
                 <div className={styles.actors}>
-                  <Heading tag='h3' text='Top Cast:' />
+                  <Heading tag='h3' text='Top Cast:' className='h3' />
                   <ul>
                     {movie.cast.map((actor, index) => (
                       <li className={styles.actor} key={index}>
@@ -90,11 +90,11 @@ const MovieDetails = ({ movie }) => {
 
       {screenshots ? (
         <div className={styles.screen}>
-          <Heading tag='h3' text='Screenshots:' />
+          <Heading tag='h3' text='Screenshots:' className='h3' />
           <ul className={styles.screenshots}>
             {screenshots.map((screen, index) => (
               <li className={styles.screenshot} key={index}>
-                <Image src={screen} alt={index} width={280} height={200} />
+                <Image src={screen} alt={`${index}`} width={280} height={200} />
               </li>
             ))}
           </ul>
@@ -104,7 +104,7 @@ const MovieDetails = ({ movie }) => {
       )}
 
       <div className={styles.text}>
-        <Heading tag='h3' text='Description:' />
+        <Heading tag='h3' text='Description:' className='h3' />
         {movie.description_full ? (
           <div className={styles.summary}>{movie.description_full}</div>
         ) : (

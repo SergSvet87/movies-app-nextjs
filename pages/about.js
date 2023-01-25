@@ -5,7 +5,7 @@ import styles from '../styles/About.module.scss';
 const About = () => (
   <div className="container">
     <div className={styles.about}>
-      <Heading className="title-h1" text='About Us' />
+      <Heading className="title-h1" tag='h1' text='About Us' />
 
       <p>
         Our team used the YTS.MX resource to create this application — the

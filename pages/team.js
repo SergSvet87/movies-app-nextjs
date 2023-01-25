@@ -58,7 +58,7 @@ const Team = () => (
       <title>Team</title>
     </Head>
     <section className={styles.team}>
-      <Heading className="title-h1" text="Our Team" />
+      <Heading className="title-h1" tag='h1' text="Our Team" />
       <p className={styles.text}>
         We are small but effective and friendly team that can implement
         necessary functionality!

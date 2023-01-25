@@ -8,7 +8,7 @@ type headingProps = {
 const Heading = ({ className, text, tag }) => {
   // const {tag, className, text} = tags
 
-  const Tag = tag || 'h1';
+  const Tag = tag;
   return <Tag className={className}>{text}</Tag>;
 };
 

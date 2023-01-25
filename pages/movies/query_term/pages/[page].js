@@ -55,7 +55,7 @@ const Page = ({ data }) => {
   return (
     <div className="container">
       <div className={styles.moviesWrapper}>
-        <Movies films={data.movies} />
+        <Movies filmItems={data.movies} />
         <Sidebar movieId={movieId} />
       </div>
       <Stack spacing={2}>

@@ -26,7 +26,7 @@ const Error = () => {
         <div className={styles.image}>
           <Image src='/404/dubl.png' alt="not found page 404" width={500} height={450} />
 
-          <Heading className={styles.title} text='404' />
+          <Heading className={styles.title} tag='h1' text='404' />
         </div>
 
         <div className={styles.text}>
