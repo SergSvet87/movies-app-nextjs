@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 
 import Navbar from './Navbar';
@@ -11,7 +10,7 @@ const NAVIGATION = [
   { id: 1, title: 'Home', path: '/' },
   { id: 2, title: 'About', path: '/about' },
   { id: 3, title: 'Team', path: '/team' },
-]
+];
 
 const GENRES = [
   { id: 1, title: 'action', path: '/movies/genres/action' },
@@ -47,22 +46,21 @@ const Header = () => (
   <header className={styles.header}>
     <div className="container">
       <div className={styles.top}>
-
         <div className={styles.logo}>
-          <Image src='/logo.png' alt="My Logo" width={50} height={40} />
+          <Image src="/logo.png" alt="My Logo" width={50} height={40} />
           <span>M</span>OVIE<span>S</span>
         </div>
-        <Navbar items={NAVIGATION} />
+        <Navbar navItems={NAVIGATION} />
         <Profile />
       </div>
       <div className={styles.bottom}>
         <div className={styles.bottomGenres}>
-          <Navbar items={GENRES} />
+          <Navbar navItems={GENRES} />
         </div>
         <Search />
       </div>
     </div>
   </header>
-)
+);
 
 export default Header;

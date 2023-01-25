@@ -1,5 +1,4 @@
 import Icons from "../public/icons/sprite-socials.svg";
-console.log(Icons);
 
 const Icon = ({ name, size }) => (
   <svg

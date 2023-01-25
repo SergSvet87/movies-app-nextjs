@@ -1,12 +1,13 @@
+import { FC } from 'react';
 
 import styles from '../styles/Footer.module.scss';
 
-const Footer = () => (
+const Footer: FC = () => (
   <footer className={styles.footer}>
     <div className={`container ${styles.container}`}>
       <div className={styles.copyright}>
-        &copy; Copyright {new Date().getFullYear()}. All rights reserved |
-        This template is made with <i className="bx bxs-heart"></i> in
+        &copy; Copyright {new Date().getFullYear()}. All rights reserved | This
+        template is made with <i className="bx bxs-heart"></i> in
         <address className="footer__address">
           <a
             href="https://github.com/SergSvet87/App_Movies.git"
@@ -18,6 +19,6 @@ const Footer = () => (
       </div>
     </div>
   </footer>
-)
+);
 
 export default Footer;

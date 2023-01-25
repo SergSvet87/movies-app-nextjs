@@ -1,10 +1,6 @@
-
-import Icon from './Icon';
-
 import styles from '../styles/SocialIcons.module.scss';
 
 const SocialIcons = ({ icons }) => (
-
   <ul className={styles.social}>
     {icons.map((icon) => (
       <li className={styles.socialItem} key={icon._id}>
@@ -13,11 +9,17 @@ const SocialIcons = ({ icons }) => (
           rel="noreferrer"
           href={icon.href}
           className="social-link">
-          <Icon name={icon.name} size={icon.size} />
+          <img
+            className={styles.socialImg}
+            src={icon.path}
+            alt={icon.name}
+            width={icon.size}
+            height={icon.size}
+          />
         </a>
       </li>
     ))}
   </ul>
-)
+);
 
 export default SocialIcons;

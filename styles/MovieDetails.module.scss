@@ -64,27 +64,24 @@
   .image {
     margin-right: 70px;
     position    : relative;
-
-    img {
-      transition: all 3s;
-    }
+    transition  : all 3s;
 
     .play {
-      display : none;
-      position: absolute;
-      top     : calc(50% - 60px);
-      left    : calc(50% - 80px);
-      z-index : 5;
-      transition: display .4s;
+      position     : absolute;
+      top          : -100%;
+      left         : 50%;
+      transform    : translate(-50%, -50%);
+      opacity      : 0;
+      z-index      : 5;
+      transition: all 2s;
 
       button {
         border-radius: 50%;
       }
-      
+
       &:hover {
         cursor: pointer;
       }
-
     }
 
     &:hover {
@@ -101,7 +98,8 @@
       }
 
       .play {
-        display   : block;
+        opacity: 1;
+        top    : 50%;
       }
     }
   }

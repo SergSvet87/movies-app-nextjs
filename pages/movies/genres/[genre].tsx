@@ -10,9 +10,9 @@ import Sidebar from "../../../components/Sidebar";
 import styles from '../../../styles/Home.module.scss';
 
 export const getServerSideProps = async (context) => {
-  const { search, page } = context.params;
+  const { genre, page } = context.params;
 
-  const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=23&sort_by=year&query_term=${search}&page=${page}`);
+  const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&genre=${genre}&page=${page}`);
   const data = await response.json();
 
   if (!data) {
@@ -22,18 +22,19 @@ export const getServerSideProps = async (context) => {
   }
 
   return {
-    props: { data: data.data ?? null },
+    props: { data: data.data ?? null }
   }
-}
+};
 
 const PAGE = 1;
 
-const Search = ({ data }) => {
+const Genre = ({ data }) => {
   const [page, setPage] = useState(PAGE);
+  console.log(data);
 
   const movieLimit = data.limit;
   const movieCount = data.movie_count;
-  const movieId = data.movies[2].id;
+  const movieId = data.movies.length === 1 ? data.movies[0].id : data.movies[2].id;
   const pageQty = Math.ceil(movieCount / movieLimit);
 
   return (
@@ -57,7 +58,7 @@ const Search = ({ data }) => {
               <PaginationItem
                 color="primary"
                 component={Link}
-                href={`/movies/query_term/pages/${item.page}`}
+                href={`/movies/genres/pages/${item.page}`}
                 {...item}
               />
             )}
@@ -68,4 +69,4 @@ const Search = ({ data }) => {
   )
 }
 
-export default Search
+export default Genre

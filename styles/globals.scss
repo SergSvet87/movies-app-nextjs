@@ -121,3 +121,7 @@ svg {
 .MuiPagination-ul a {
   color: $white-color;
 }
+
+.css-bf9wz-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: $primary-color;
+}

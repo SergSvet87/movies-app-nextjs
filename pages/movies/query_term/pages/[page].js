@@ -6,10 +6,26 @@ import PaginationItem from '@mui/material/PaginationItem';
 
 import Movies from "../index";
 import Sidebar from "../../../components/Sidebar";
+import Slider from "../../../components/Slider";
 
 import styles from '../../../styles/Home.module.scss';
 
-export const getServerSideProps = async (context) => {
+// export const getStaticProps = async () => {
+//   const response = await fetch('https://yts.mx/api/v2/list_movies.json?limit=23&sort_by=year');
+//   const data = await response.json();
+
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     }
+//   }
+
+//   return {
+//     props: { data: data.data },
+//   }
+// }
+
+export const getServerSideProps = async (context) => {  
   const { search, page } = context.params;
 
   const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=23&sort_by=year&query_term=${search}&page=${page}`);
@@ -22,18 +38,18 @@ export const getServerSideProps = async (context) => {
   }
 
   return {
-    props: { data: data.data ?? null },
+    props: { data: data.data ?? null }
   }
-}
+};
 
 const PAGE = 1;
 
-const Search = ({ data }) => {
+const Page = ({ data }) => {
   const [page, setPage] = useState(PAGE);
 
   const movieLimit = data.limit;
   const movieCount = data.movie_count;
-  const movieId = data.movies[2].id;
+  const movieId = data.movies.length === 1 ? data.movies[0].id : data.movies[1].id;
   const pageQty = Math.ceil(movieCount / movieLimit);
 
   return (
@@ -68,4 +84,4 @@ const Search = ({ data }) => {
   )
 }
 
-export default Search
+export default Page

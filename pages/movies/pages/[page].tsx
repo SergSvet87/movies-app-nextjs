@@ -10,25 +10,10 @@ import Slider from "../../../components/Slider";
 
 import styles from '../../../styles/Home.module.scss';
 
-// export const getStaticProps = async () => {
-//   const response = await fetch('https://yts.mx/api/v2/list_movies.json?limit=23&sort_by=year');
-//   const data = await response.json();
-
-//   if (!data) {
-//     return {
-//       notFound: true,
-//     }
-//   }
-
-//   return {
-//     props: { data: data.data },
-//   }
-// }
-
 export const getServerSideProps = async (context) => {
-  const { genre } = context.params;
+  const { page } = context.params;
 
-  const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&genre=${genre}`);
+  const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=${page}`);
   const data = await response.json();
 
   if (!data) {
@@ -44,17 +29,16 @@ export const getServerSideProps = async (context) => {
 
 const PAGE = 1;
 
-const Genre = ({ data }) => {
+const Page = ({ data }) => {
   const [page, setPage] = useState(PAGE);
 
-  const movieLimit = data === undefined ? '' : data.limit;
-  const movieCount = data === undefined ? '' : data.movie_count;
-  const movieId = data === undefined ? '' : data.movies[2].id;
+  const movieLimit = data.limit;
+  const movieCount = data.movie_count;
+  const movieId = data.movies.length === 1 ? data.movies[0].id : data.movies[2].id;
   const pageQty = Math.ceil(movieCount / movieLimit);
 
   return (
     <div className="container">
-      <Slider />
       <div className={styles.moviesWrapper}>
         <Movies films={data.movies} />
         <Sidebar movieId={movieId} />
@@ -74,7 +58,7 @@ const Genre = ({ data }) => {
               <PaginationItem
                 color="primary"
                 component={Link}
-                href={`/pages/${item.page}`}
+                href={`/movies/pages/${item.page}`}
                 {...item}
               />
             )}
@@ -85,4 +69,4 @@ const Genre = ({ data }) => {
   )
 }
 
-export default Genre
+export default Page
